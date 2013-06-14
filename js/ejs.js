@@ -5,7 +5,7 @@
 
 
 
-elementjs = {
+ejs = {
     username: "",
     userdata: {name:'anonymous'},
     response:{},
@@ -14,7 +14,7 @@ elementjs = {
                 .done(function(data) {
             dd = eval('(' + data + ')');
             console.log(dd.NAV_001);
-            elementjs.commit_messages(dd);
+            ejs.commit_messages(dd);
         }
         );
     },
@@ -88,7 +88,7 @@ elementjs = {
         return true;
     },
     userlogin: function(e) {
-        var d= $(elementjs);
+        var d= $(ejs);
         
         $.post("services.php", {message: "login", username: $('#in_username').val(), password: $('#in_password').val()})
                 .done(
@@ -123,7 +123,7 @@ elementjs = {
         lf.keyup(
                 function(k) {
                     if (k.keyCode === 10 || k.keyCode === 13)
-                        elementjs.on_login_input_return('in_username');
+                        ejs.on_login_input_return('in_username');
                 }
         );
         crl = $("#in_username-clearbtn");
@@ -134,7 +134,7 @@ elementjs = {
         lf.keyup(
                 function(k) {
                     if (k.keyCode === 10 || k.keyCode === 13)
-                        elementjs.on_login_input_return('in_password');
+                        ejs.on_login_input_return('in_password');
                 }
         );
         crlp = $("#in_password-clearbtn");
@@ -151,7 +151,7 @@ elementjs = {
             data: data_array,
             success: function(objdata) {
                 console.log("success[text]:" + objdata);
-                elementjs.response = eval('(' + objdata + ')');
+                ejs.response = eval('(' + objdata + ')');
                 console.log("resonpse:" + objdata);
             },
             error: function(objdata) {
