@@ -26,7 +26,7 @@ class element extends obj{
         parent::__construct($p, $i);
         if(!$tname) $tname = "div";
         $this->tag = $tname;
-        $this->htmltext="";
+        $this->stream="";
         if(!empty($i)) 
             $this->attribute("id", $i);
         if($tname) 
@@ -34,18 +34,19 @@ class element extends obj{
         $this->close_tag = $close_tag;
     }
     
-    function tagname($t,$closing=false) 
+    function htmltag($t=null,$closing=false) 
     { 
-        $this->tag = $t; $this->close_tag = $closing;
+        if($t)
+            $this->tag = $t; 
+        $this->close_tag = $closing;
+        return $this->tag;
     }
     
-    function htmltag() 
-    { 
-        return $this->tag; 
-    }
     
-    function cssclass($cname){
-        $this->attr("class", $cname);
+    function cls($cname=null){
+        if($cname) 
+            $this->attr("class", $cname);
+        return $this->attributesarray['class'];
     }
     
     function inlinestyle(){
@@ -152,19 +153,21 @@ class element extends obj{
     
     function code($cod){
         $js = new element($this->parent(), '');
-        $js->tagname('script', 'true');
+        $js->htmltag('script', true);
         $js->text($cod);
     }
     
-//     function on_mouse_over($js_var, $fncall, array $args){
-//         $args_line ="";
-//         $c=0;
-//         foreach ($args as $a){
-//             $args_line .= $c ? ",$a" : $a;
-//         }
-//         $this->attr("$(\"#".$this->id()."\").mouseover(", $js_var.".".$fncall."(".addslashes($args_line).");");
-//         
-//     }
+    // -------------  Some common used inline javascript events, functions... --------------
+    function hover($code)
+    {
+        return "";
+    }
+    
+    function click($code)
+    {
+        return "";
+    }
+    // -------------------------------------------------------------------------------------
     
     public static function div($p,$i=null)
     {
@@ -177,7 +180,7 @@ class element extends obj{
     {
         $sp = new element($p,$i, 'span',true);
         if($class) 
-            $sp->cssclassname($class);
+            $sp->cls($class);
         $sp->text($text);
         return $sp;
     }
@@ -187,22 +190,25 @@ class element extends obj{
     {
         $a = new element($p,$i, 'a',true);
         if($href)
-            $a->attr('href', $href);
+            $a->attribute('href', $href);
         if($disabled)
-            $a->attr("onclick",'return false;');
+            $a->attribute("onclick",'return false;');
         
         return $a;
     }
     
-    public static function lineedit($p,$i, $ph=null, $t='text', $val='', $length=null, $max=null)
+    public static function lineedit($p,$i, $ph=null, $val='', $length=null, $max=null)
     {
         $le = new element($p,$i,'input',false);
-        $le->attr('name',$i);
-        $le->attr('type',$t);
-        $le->attr('value',$val);
-        
+        $le->attribute('name',$i);
+        $le->attribute('type','text');
+        $le->attribute('value',$val);
+        if($length)
+            $le->attribute ('length', $length);
+        if($max)
+            $le->attribute ('maxlength', $max);
         if($ph) 
-            $le->attr('placeholder',$ph);
+            $le->attribute('placeholder',$ph);
         return $le;
     }
     
