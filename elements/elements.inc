@@ -31,7 +31,7 @@ class element extends obj{
             $this->attr ("id", $i);
         if($tname) 
             $this->tag = $tname;
-        $this->close_tag = $close_tag
+        $this->close_tag = $close_tag;
     }
     
     function tagname($t,$closing=false) 
@@ -92,8 +92,8 @@ class element extends obj{
     {
         if($x) $this->_g['left'] = obj::tr_geometry($x);
         if($y) $this->_g['top']  = obj::tr_geometry($y);
-        $this->_g['width']  = obj:tr_geometry($dx,true);
-        $this->_g['height'] = obj:tr_geometry($dy,true);
+        $this->_g['width']  = obj::tr_geometry($dx,true);
+        $this->_g['height'] = obj::tr_geometry($dy,true);
     }
     
     function height($h=null)
