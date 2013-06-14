@@ -46,7 +46,7 @@ class obj{
     
     function iterate_children($fn)
     {
-        $str = "":
+        $str = "";
         if(count($this->_children)==0) return "";
         foreach($this->_children as $c)
             $str .= $c->$fn();
