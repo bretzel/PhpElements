@@ -1,6 +1,6 @@
 <?php
 
-require_once 'dbobject.inc';
+require_once 'elements/dbobject.inc';
 class  usr{
 
     var $id;

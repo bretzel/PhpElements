@@ -1,5 +1,5 @@
 <?php
-require_once 'object.inc';
+require_once 'elements/obj.inc';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,7 +10,7 @@ require_once 'object.inc';
  * `fetch object` mysqli wraper
  * @author bretzel
  */
-class dbobject extends object{
+class dbobject extends obj{
    
     private $password;
     private $dbname;
