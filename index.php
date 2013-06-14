@@ -1,7 +1,7 @@
 <?php
 //$ipath = get_include_path() . PATH_SEPARATOR . "php" . PATH_SEPARATOR . "mastermenu" . PATH_SEPARATOR . "contents";
 //set_include_path($ipath);
-require_once 'services.php';
+
 ?>
 <!DOCTYPE HTML>
 
@@ -21,10 +21,46 @@ require_once 'services.php';
         <link rel="stylesheet" href="css/jui.css" />
         <link rel="stylesheet" href="css/sh_ide-kdev.css" />
         <link rel="stylesheet" href="css/style.css" />
-
+        
+        <style>
+            table{ border: 1px dashed #c0c0c0;border-collapse:collapse; }
+            td { border: 1px dashed #c0c0c0; text-align: center;}
+            th { border-right: 1px dashed #c0c0c0; text-align: center;}
+            caption{ 
+                border: 1px dashed #c0c0c0;
+                border-bottom : none;
+            }
+        </style>
     </head>
     <body>
         
-        
+        <table style="width:200px;">
+            <caption>caption</caption>
+            <thead>
+                <tr>
+                    <th></th><th>h1</th><th>h2</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <th>vh1</th>
+                    <td> col 1</td>
+                    <td> col 2</td>
+                </tr>
+                <tr>
+                    <th>vh2</th>
+                    <td> col 1</td>
+                    <td> col 2</td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th>R:</th>
+                        <th>1000.0123L</td>
+                        <th>1234.0123L</td>
+                    </tr>
+                </tfoot>
+            </body>
+        </table>
     </body>
 </html>
