@@ -28,7 +28,7 @@ class element extends obj{
         $this->tag = $tname;
         $this->htmltext="";
         if(!empty($i)) 
-            $this->attr ("id", $i);
+            $this->attribute("id", $i);
         if($tname) 
             $this->tag = $tname;
         $this->close_tag = $close_tag;
@@ -172,12 +172,23 @@ class element extends obj{
         return $div;
     }
     
+    
+    public static function span($p, $i, $class=null, $text="")
+    {
+        $sp = new element($p,$i, 'span',true);
+        if($class) 
+            $sp->cssclassname($class);
+        $sp->text($text);
+        return $sp;
+    }
+    
+    
     public static function alink($p,$i,$href=null, $disabled=false)
     {
         $a = new element($p,$i, 'a',true);
         if($href)
             $a->attr('href', $href);
-        if(disabled)
+        if($disabled)
             $a->attr("onclick",'return false;');
         
         return $a;
