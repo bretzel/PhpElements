@@ -23,12 +23,13 @@
         <link rel="stylesheet" href="css/style.css" />
         
         <style>
-            table{ border: 1px dashed #c0c0c0;border-collapse:collapse; }
+            table{ border: 1px dashed #c0c0c0;border-collapse:collapse; background-color: white;}
             td { border: 1px dashed #c0c0c0; text-align: center;}
-            th { border-right: 1px dashed #c0c0c0; text-align: center;}
+            th { border-right: 1px dashed #c0c0c0; text-align: center;background-color: #f4fafa;}
             caption{ 
                 border: 1px dashed #c0c0c0;
                 border-bottom : none;
+                background-color: white;
             }
         </style>
     </head>
@@ -60,6 +61,13 @@
                         <th>1234.0123L</td>
                     </tr>
                 </tfoot>
+                <div id="fond"> 
+                    <div class="ruban">     
+                        <h2>Hello, World! - Welcome to my World! :-)</h2>     
+                    </div>     
+                    <div class="ruban_gauche"></div>
+                    <div class="ruban_droit"></div>
+                </div>
             </body>
         </table>
     </body>
