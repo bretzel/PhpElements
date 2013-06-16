@@ -23,18 +23,24 @@
         <link rel="stylesheet" href="css/style.css" />
         
         <style>
-            table{ border: 1px dashed #c0c0c0;border-collapse:collapse; background-color: white;}
-            td { border: 1px dashed #c0c0c0; text-align: center;}
-            th { border-right: 1px dashed #c0c0c0; text-align: center;background-color: #f4fafa;}
+            table{ border: 1px solid #ccf5ff;border-collapse:collapse; background-color: white;}
+            td { border: 1px solid #ccf5ff; text-align: left; padding-left:5px; padding-right:5px;}
+            th { border-right: 1px solid #ccf5ff; border-bottom: 1px solid #c0f5ff; text-align: right;background-color: #fff;}
             caption{ 
-                border: 1px dashed #c0c0c0;
+                border: 1px solid #c0f5ff;
                 border-bottom : none;
                 background-color: white;
             }
         </style>
     </head>
     <body>
-        
+        <div id="fond"> 
+                    <div class="ruban">     
+                        <h2>Hello, I am bretzel, Welcome to my Home Page! :-)</h2>     
+                    </div>     
+                    <div class="ruban_gauche"></div>
+                    <div class="ruban_droit"></div>
+                </div>
         <table style="width:200px;">
             <caption>caption</caption>
             <thead>
@@ -61,14 +67,32 @@
                         <th>1234.0123L</td>
                     </tr>
                 </tfoot>
-                <div id="fond"> 
-                    <div class="ruban">     
-                        <h2>Hello, World! - Welcome to my World! :-)</h2>     
-                    </div>     
-                    <div class="ruban_gauche"></div>
-                    <div class="ruban_droit"></div>
-                </div>
-            </body>
+            </tbody>
         </table>
+        
+        <table style="width:200px;">
+            <caption>user informations</caption>
+            <tbody>
+                <tr>
+                    <th>id</th>
+                    <td>0000000001</td>
+                    
+                </tr>
+                <tr>
+                    <th>username</th>
+                    <td>serge.lussier@arknowledgesys.com</td>
+                </tr>
+                <tfoot>
+                </tfoot>
+            </tbody>
+        </table>
+        
+        <div>
+            <h3>php generated table test:</h3>
+            <?php
+                $table = new table(0,"test");
+                
+            <?
+        </div>
     </body>
 </html>
