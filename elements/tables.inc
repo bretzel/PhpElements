@@ -103,25 +103,56 @@ class table_footer extends element
  */
 
 class table extends element{
-    var $rows;
-    var $headers;
-    var $tfoot;
-    var $tbody;
-    var $caption;
-    var $vheaders;
+    var $rows = array();
+    var $header; // The header has its own row
+    var $foot;   // The table footer has its own row
+    var $body;   // Mandatory sub tag in every tables
+    var $caption; // Optional caption instance
+    var $vheaders = array(); // Optional vertical headers generated before every columns
     
     
     public function __construct($p, $i) {
         parent::__construct($p, $i, 'table',true);
-        $this->theader = NULL;
-        $this->tfoot   = NULL;
+        $this->header = NULL;
+        $this->foot   = NULL;
     }
     
-    public function append_row($rid){
+    public function append_row($rid)
+    {
         $this->rows[$rid] = new table_row($this,$rid);
         return $this->rows[$rid];
     }
     
+    public function header($p)
+    {
+        $h = new table_header($this, $this->id().'-header');        
+        return $h;
+    }
+    
+    public function headercolumn($hrow,$i)
+    {
+        $hc = new table_column($hrow, $i);
+        $hc->htmltag('th', true);
+        return $hc;
+    }
+    
+    public function caption($capid=null)
+    {
+        if($capid !== null)
+            $cap = new element($this,$capid,'caption',true);
+        return $cap;
+    }
+    
+    
+    
 }
+    
 
+
+class entity_table extends table
+{
+    var $entity;
+    
+    
+}
 ?>
