@@ -8,57 +8,57 @@
 
 
 #fond {
-position: relative;
-margin: 0px auto;
-width: 650px;
-background: #fff;
-border-radius: 5px;
-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-z-index: 10;
-        height:110px;
+    position: relative;
+    margin: 0px auto;
+    width: 650px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+    height:80px;
 }
 
 .ruban {
-background: #b1c70d;
-height: 50px;
-width: 680px;
-position: relative;
-left:-15px;
-top: 30px;
-float: left;
-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-z-index: 100;
+    background: #3387CC;
+    height: 50px;
+    width: 680px;
+    position: relative;
+    left:-15px;
+    top: 10px;
+    float: left;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    z-index: 100;
 }
 
 .ruban h2 {
-font-size: 25px;
-color: #fff;
-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-text-align: center;
-        margin:10px;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-align: center;
+    margin:8px;
 }
 
 .ruban_gauche {
-    border-color: transparent #7e9202 transparent transparent;
+    border-color: transparent #004276 transparent transparent;
     border-style:solid;
     border-width:15px;
     height:0px;
     width:0px;
     position: relative;
     left: -30px;
-    top: 65px;
+    top: 45px;
     z-index: -1;  /*s'affichera sous le rectangle  */
 }
 
 .ruban_droit {
-    border-color: transparent transparent transparent #7e9202;
+    border-color: transparent transparent transparent #004276;
     border-style:solid;
     border-width:15px;
     height:0px;
     width:0px;
     position: relative;
     left: 650px;
-    top: 35px;
+    top: 15px;
     z-index: -1;
 }
 
@@ -85,7 +85,7 @@ body
 {
     background-color: white;/*#e8e8e8;*/
     background-image: url('images/bg2.png');
-    margin : auto;
+    margin : 10px auto;
     margin-top: 10px;
 }
 
@@ -97,29 +97,28 @@ pre {
     box-shadow: inset 0px 0px 8px #c0c0c0;
     padding: 10px;
 }
-#master-menu form label{
-    color: #c94663;
-    font-size:9pt;
-}
+
+
+
 input[type=text]{
     border: none;
     outline : none;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #565656;
 }
 /*
     loginform
-*/
+
 #login_form_usr input.text { 
-    /*margin-bottom:12px;*/ 
+    margin-bottom:12px; 
     width:95%; 
     padding: .4em; 
 }
 #login_form_usr fieldset { 
     padding:0; 
     border:0; 
-    /*margin-top:25px;*/ 
+    margin-top:25px; 
 }
 #login_form_usr h1 { 
     font-size: 1.2em; 
@@ -146,7 +145,7 @@ input[type=text]{
     border: 1px solid transparent; 
     padding: 0.3em; 
 }
-
+*/
 
 
 
@@ -279,47 +278,6 @@ table.style1 tfoot
 table.style1 tbody
 {
 }
-/*
-form
-{
-}
-
-form input,
-form select,
-form textarea
-{
-    border-radius: 0.4em;
-    -webkit-appearance: none;
-    border: solid 1px #ddd;
-    padding: 0.5em;
-    width: 100%;
-}
-
-form input:focus,
-form textarea:focus
-{
-    box-shadow: 0px 0px 2px 2px #c94663;
-}
-
-form ::-webkit-input-placeholder
-{
-    color: #aaa;
-}
-
-form :-moz-placeholder
-{
-    color: #aaa;
-}
-
-form ::-moz-placeholder
-{
-    color: #aaa;
-}
-
-form :-ms-input-placeholder
-{
-    color: #aaa;
-}*/
 
 br.clear
 {
