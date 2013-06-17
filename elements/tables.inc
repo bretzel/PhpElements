@@ -1,6 +1,7 @@
 <?php
 
 require_once 'elements.inc';
+require_once 'dbobject.inc';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -163,10 +164,15 @@ class entity_table extends table
         $this->entity = $entity;
     }
     
-    function generate_display()
+    function generate_display($wfia)
     {
         $ct = get_class($this->entity);
         $this->caption($ct.'-caption')->text($ct);
+        foreach($wfia as $D)
+        {
+            $name = $D->name;
+            $this->entity->$name = '';
+        }
         foreach($this->entity as $m => $val)
         {
             $r = $this->append_row($m.'-row');

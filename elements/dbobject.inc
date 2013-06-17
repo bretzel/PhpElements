@@ -116,7 +116,9 @@ class dbobject extends obj{
     
     function query_fields_infos($table_name)
     {
-        $q = "SELECT * from $table LIMIT 0";
+        $q = "SELECT * from $table_name LIMIT 0";
+        if(!$this->dbhandle)
+            $this->connect();
         $res = $this->dbhandle->query($q);
         if(!$res) return false;
         $a = $res->fetch_fields();
