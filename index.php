@@ -93,17 +93,44 @@
                     var $active     = true;
                     var $admlevel   = 10;
                 }
-
-
-                //$udb = new dbobject(NULL, 'bretzeltux', 'lus4vr47', 'bretzeltux');
-                //$udb->connect();
-                //$arr = $udb->query_fields_infos('usr');
+                
                 $u = new usr;
-
-                $ut = new entity_table(null, $u);
-                $ut->generate_display($u);
-                echo $ut->commit();
+                $cols = array("name","length","type","decimals");
+                
+                $ut = new entity_table(null, $u,'user data informations');
+                echo $ut->display()->commit();
+                echo "<h3>table informations:</h3>";
+                    
+                $mdb = new dbobject(NULL, 'bretzeltux', 'lus4vr47', 'bretzeltux');
+                $data = $mdb->query_fields_infos('usr');
+                
+                $dbt = new table(null, 'table-informations');
+                $dbt->caption("caption-id")->text("table 'usr' informations");
+                $th = $dbt->init_thead();
+                foreach($data as $h)
+                {
+                    //var_dump($h);
+                    foreach($cols as $colname)
+                        $th->append_column($colname.'-head')->text($colname);
+                    break;
+                }
+                
+                $types = dbobject::types();
+                foreach($data as $h=>$column)
+                {
+                    $r = $dbt->append_row('data');
+                    foreach($cols as $name)
+                    {
+                        error_log($name.":".$column->$name);
+                        if($name=="type")
+                            $r->append_column('d')->text($types[$column->$name]);
+                        else
+                            $r->append_column('d')->text($column->$name);
+                    }
+                }
+                echo $dbt->commit();
             ?>
+            <br /> <br />
         </div>
     </div>
 </body>

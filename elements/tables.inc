@@ -113,7 +113,7 @@ class table extends element{
     var $header=null; // The header has its own row
     var $foot=null;   // The table footer has its own row
     var $body=null;   // Mandatory sub tag in every tables
-    var $caption=null; // Optional caption instance
+    var $icaption=null; // Optional caption instance
     var $vheaders = array(); // Optional vertical headers generated before every columns
     
     
@@ -126,8 +126,9 @@ class table extends element{
     
     public function append_row($rid)
     {
-        $this->rows[$rid] = new table_row($this->body,$rid);
-        return $this->rows[$rid];
+        $r = new table_row($this->body,$rid);
+        $this->rows[$rid] = $r;
+        return $r;
     }
     
     public function init_thead()
@@ -139,9 +140,9 @@ class table extends element{
     public function caption($capid=null)
     {
         if($capid !== null)
-            $cap = new element($this,$capid,'caption',true);
+            $this->icaption = new element($this,$capid,'caption',true);
             
-        return $cap;
+        return $this->icaption;
     }
     
     
@@ -158,33 +159,34 @@ class table extends element{
 
 class entity_table extends table
 {
-    var $entity;
-    public function __construct($p, $entity) {
-        parent::__construct($p, get_class($entity));
-        $this->entity = $entity;
+    var $data=null;
+    var $title=null;
+    public function __construct($p, $data, $ctitle) {
+        parent::__construct($p, $ctitle.'-data-table');
+        $this->data = $data;
+        $this->title = $ctitle;
     }
     
-    function generate_display($wfia)
+    function display()
     {
-        $ct = get_class($this->entity);
-        $this->caption($ct.'-caption')->text($ct);
-//        foreach($wfia as $D)
-//        {
-//            $name = $D->name;
-//            $this->entity->$name = '';
-//        }
-        foreach($this->entity as $m => $val)
+        $this->caption($this->title)->text($this->title);
+        $n = 0;
+        foreach($this->data as $h => $v)
         {
-            $r = $this->append_row($m.'-row');
-            $c = $r->append_column($m.'-th');
-            $c->htmltag('th',true);
-            $c->text($m);
-            $c = $r->append_column($m.'-data');
-            $c->text($val);
+            $ro      = $this->append_row($h.'-head');
+            $hcol    = $ro->append_column($h.'-label');
+            $hcol->htmltag('th',true);
+            $hcol->text($h);
+            $ro->append_column($h.'-col'.$n++)->text($v);
         }
-        $this->css('width', '200px');
+        return $this;
     }
     
     
+    public static function generate_display($p, $data, $ctitle)
+    {
+    }
+    
+        
 }
 ?>

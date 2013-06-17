@@ -8,35 +8,30 @@ require_once 'elements/tables.inc';
 
 
 
-
-class formfield extends elements
+class field_infos 
 {
     
 }
-
-class fieldset extends elements
+class tfields extends table
 {
+    var $data = null;
+    private $column_infos;
+    private $schema_infos;
+    
+    public function __construct($p, $i, $data) {
+        parent::__construct($p, $i);
+    }
+    
+    public function schema_row($obj){
+        $this->schema_infos[] = $obj;
+    }
+    
+    public function pull_schema(){
+        
+    }
+    
     
 }
-/**
- * Description of forms
- *
- * Generates a form with its given fiedset
- * @author bretzel
- */
-class form extends elements
-{
-    //put your code here
-}
 
 
-/**
- * Description of tform
- * generates form as a table container and its fieldset as table columns
- * @author bretzel
- */
-class tform extends tables
-{
-    
-}
 ?>
