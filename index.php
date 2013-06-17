@@ -20,17 +20,7 @@
         <link rel="stylesheet" href="css/jui.css" />
         <link rel="stylesheet" href="css/sh_ide-kdev.css" />
         <link rel="stylesheet" href="css/style.css" />
-
-        <style>
-            table{ border: 1px solid #ccf5ff;border-collapse:collapse; background-color: white;}
-            td { border: 1px solid #ccf5ff; text-align: left; padding-left:5px; padding-right:5px;}
-            th { border-right: 1px solid #ccf5ff; border-bottom: 1px solid #c0f5ff; text-align: right;background-color: #fff;}
-            caption{ 
-                border: 1px solid #c0f5ff;
-                border-bottom : none;
-                background-color: white;
-            }
-        </style>
+        <link rel="stylesheet" href="css/bretzeltux.css" />
     </head>
     <body>
         <div id="fond"> 
@@ -40,70 +30,81 @@
             <div class="ruban_gauche"></div>
             <div class="ruban_droit"></div>
         </div>
-        <table style="width:200px;">
-            <tbody>
-                <tr>
-                    <th>vh1</th>
-                    <td> col 1</td>
-                    <td> col 2</td>
-                </tr>
-                <tr>
-                    <th>vh2</th>
-                    <td> col 1</td>
-                    <td> col 2</td>
-                </tr>
+        <div id="wrapper">
+            <table style="width:200px;">
+                <tbody>
+                    <tr>
+                        <th>vh1</th>
+                        <td> col 1</td>
+                        <td> col 2</td>
+                    </tr>
+                    <tr>
+                        <th>vh2</th>
+                        <td> col 1</td>
+                        <td> col 2</td>
+                    </tr>
+                </tbody>
+                <caption>caption</caption>
+                <thead>
+                    <tr>
+                        <th></th><th>h1</th><th>h2</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>R:</th>
+                        <th>1000.0123L</td>
+                        <th>1234.0123L</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <table style="width:200px;">
+                <caption>user informations</caption>
+                <tbody>
+                    <tr>
+                        <th>id</th>
+                        <td>0000000001</td>
+
+                    </tr>
+                    <tr>
+                        <th>username</th>
+                        <td>serge.lussier@arknowledgesys.com</td>
+                    </tr>
+                <tfoot>
+                </tfoot>
             </tbody>
-            <caption>caption</caption>
-            <thead>
-                <tr>
-                    <th></th><th>h1</th><th>h2</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th>R:</th>
-                    <th>1000.0123L</td>
-                    <th>1234.0123L</td>
-                </tr>
-            </tfoot>
         </table>
 
-        <table style="width:200px;">
-            <caption>user informations</caption>
-            <tbody>
-                <tr>
-                    <th>id</th>
-                    <td>0000000001</td>
+        <div>
+            <h3>php generated table test [with entity]:</h3>
+            <?php
+                include 'elements/tables.inc';
 
-                </tr>
-                <tr>
-                    <th>username</th>
-                    <td>serge.lussier@arknowledgesys.com</td>
-                </tr>
-            <tfoot>
-            </tfoot>
-        </tbody>
-    </table>
+                class usr
+                {
+                    var $id         ="0000000001";
+                    var $name       ="Serge Lussier";
+                    var $username   ="serge.lussier";
+                    var $email      ="serge.lussier@arknowledgesys.com";
+                    var $passwd     ="secret";
+                    var $alias      ="bretzel";
+                    var $birthdate  ="1965/04/25 08:50";
+                    var $active     = true;
+                    var $admlevel   = 10;
+                }
 
-    <div>
-        <h3>php generated table test [with entity]:</h3>
-        <?php
-            include 'elements/tables.inc';
-            
-            class usr
-            {
-                
-            }
-            
-            
-            $udb = new dbobject(NULL, 'bretzeltux', 'lus4vr47', 'bretzeltux');
-            //$udb->connect();
-            $arr = $udb->query_fields_infos('usr');
-            
-            $ut = new entity_table(null, $u);
-            $ut->generate_display($arr);
-            echo $ut->commit();
-        ?>
+
+                //$udb = new dbobject(NULL, 'bretzeltux', 'lus4vr47', 'bretzeltux');
+                //$udb->connect();
+                //$arr = $udb->query_fields_infos('usr');
+                $u = new usr;
+
+                $ut = new entity_table(null, $u);
+                $ut->generate_display($u);
+                echo $ut->commit();
+            ?>
+        </div>
     </div>
 </body>
 </html>
