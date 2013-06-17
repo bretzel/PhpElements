@@ -108,11 +108,11 @@ class table_footer extends element
  */
 
 class table extends element{
-    var $rows = array();
-    var $header; // The header has its own row
-    var $foot;   // The table footer has its own row
-    var $body;   // Mandatory sub tag in every tables
-    var $caption; // Optional caption instance
+    var $rows = null;
+    var $header=null; // The header has its own row
+    var $foot=null;   // The table footer has its own row
+    var $body=null;   // Mandatory sub tag in every tables
+    var $caption=null; // Optional caption instance
     var $vheaders = array(); // Optional vertical headers generated before every columns
     
     
@@ -131,10 +131,10 @@ class table extends element{
     
     public function init_thead()
     {
-        $this->header = new table_header($this, $this->id().'-header');        
-        return $this->header;
+        $h = new table_header($this, $this->id().'-header');        
+        return $h;
     }
-    
+        
     public function caption($capid=null)
     {
         if($capid !== null)
