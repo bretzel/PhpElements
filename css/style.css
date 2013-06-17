@@ -20,7 +20,7 @@
     box-sizing: border-box;
 }
 
-body, input, textarea
+body, textarea
 {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;

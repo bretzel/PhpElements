@@ -135,3 +135,32 @@ root {
     display: block;
 }
 
+.lineedit{
+    border  : none;
+    outline : none;
+    background-color: white !important ;
+    font-family: Roboto;
+    font-size: 9pt;
+}
+
+.lineedit .normal{
+    border:none;
+    border-bottom: 2px solid #3387CC;
+}
+
+.lineedit .modified{
+    border:none;
+    border-bottom: 2px solid #98fb98;
+}
+
+.lineedit .error{
+    border:none;
+    border-bottom: 2px solid #da502c;
+}
+
+.lineedit .required{
+    border:none;
+    border-bottom: 2px solid #ff502c;
+}
+
+
