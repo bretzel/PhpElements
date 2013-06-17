@@ -16,26 +16,26 @@ class dbobject extends obj{
     private $dbname;
     private $username;
     // No host - always localhost
-    private $dbsocket;
+    private $dbhandle;
     public function __construct($p, $uname, $pass, $dbname) {
         parent::__construct($p, $uname);
         $this->password = $pass;
         $this->dbname = $dbname;
         $this->username = $uname;
-        $this->dbsocket = NULL;
+        $this->dbhandle = NULL;
     }
     
     private function connect(){
-        $this->dbsocket = new mysqli('localhost', $this->username, $this->password, $this->dbname);
-        $e = $this->dbsocket->errno;
+        $this->dbhandle = new mysqli('localhost', $this->username, $this->password, $this->dbname);
+        $e = $this->dbhandle->errno;
         if($e > 0){
-            object::throw_fatal(array('mysqli connect error #'=>$e, 'error'=>$this->dbsocket->error));
+            object::throw_fatal(array('mysqli connect error #'=>$e, 'error'=>$this->dbhandle->error));
         }
         return true;
     }
     function done(){
-        $this->dbsocket->close();
-        $this->dbsocket = NULL;
+        $this->dbhandle->close();
+        $this->dbhandle = NULL;
     }
     static public function etoq($entity){
         $out = "";
@@ -102,26 +102,37 @@ class dbobject extends obj{
         else
             $Q = "SELECT $f FROM $entity";
         error_log("QUERY: '".$Q."'");
-        if(!$this->dbsocket)
+        if(!$this->dbhandle)
             $this->connect();
         
-        $res = $this->dbsocket->query($Q);
+        $res = $this->dbhandle->query($Q);
         if(!$res){// Query was a write ? Then $result = NULL.
-            if($this->dbsocket->errno > 0){
-                object::throw_fatal(array("mysqli error#:"=>$this->dbsocket->errno, "error:"=>$this->dbsocket->error));
+            if($this->dbhandle->errno > 0){
+                object::throw_fatal(array("mysqli error#:"=>$this->dbhandle->errno, "error:"=>$this->dbhandle->error));
             }
         }
         return $res;
     }
     
+    function query_fields_infos($table_name)
+    {
+        $q = "SELECT * from $table LIMIT 0";
+        $res = $this->dbhandle->query($q);
+        if(!$res) return false;
+        $a = $res->fetch_fields();
+        $res->close();
+        return $a;
+    }
+    
+    
     function query($Q, $obj_instance=NULL, $obj_method=NULL)
     {
         if(!$Q) return false;
-        $result = $this->dbsocket->query($Q);
+        $result = $this->dbhandle->query($Q);
         if(!$result){
             // Query was a write ? Then $result = NULL.
-            if($this->dbsocket->errno > 0){
-                object::throw_fatal(array("mysqli error#:"=>$this->dbsocket->errno, "error:"=>$this->dbsocket->error));
+            if($this->dbhandle->errno > 0){
+                object::throw_fatal(array("mysqli error#:"=>$this->dbhandle->errno, "error:"=>$this->dbhandle->error));
             }
         }
         if($obj_instance){
