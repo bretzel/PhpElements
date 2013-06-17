@@ -168,11 +168,11 @@ class entity_table extends table
     {
         $ct = get_class($this->entity);
         $this->caption($ct.'-caption')->text($ct);
-        foreach($wfia as $D)
-        {
-            $name = $D->name;
-            $this->entity->$name = '';
-        }
+//        foreach($wfia as $D)
+//        {
+//            $name = $D->name;
+//            $this->entity->$name = '';
+//        }
         foreach($this->entity as $m => $val)
         {
             $r = $this->append_row($m.'-row');
