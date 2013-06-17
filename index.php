@@ -86,52 +86,22 @@
     </table>
 
     <div>
-        <h3>php generated table test:</h3>
+        <h3>php generated table test [with entity]:</h3>
         <?php
             include 'elements/tables.inc';
-            $table = new table(0, "test");
-            $table->css('width', '300px');
-            
-            $r = $table->append_row('r1');
-            $h = new row_header($r, 'h1');
-            $h->text('rh');
-            $c = $r->append_column('c1');
-            $h->attribute('width','40px');
-            $c->text('col1');
-            
-            $r = $table->append_row('r2');
-            $h = new row_header($r, 'h2');
-            $h->text('name');
-            $c = $r->append_column('ce2');
-            $c->text('ce2');
-            
-            $h = $table->init_thead();
-            $c = $h->append_column('e');
-            $c = $h->append_column('h');
-            $c->text('head');
-            $cap = $table->caption('PHP');
-            $cap->text('php');
-            
-            echo $table->commit();
-            
             
             class usr
             {
-                var $id         = "00000000001";
-                var $username   = "serge.lussier@arknowledgesys.com";
-                var $passwd     = "secret";
-                var $email      = "serge.lussier@arknowledgesys.com";
-                var $alias      = "bretzel";
-                var $birthdate  = "1965/04/25";
-                public function __construct() {
-                    ;
-                }
+                
             }
             
             
-            $u = new usr;
+            $udb = new dbobject(NULL, 'bretzeltux', 'lus4vr47', 'bretzeltux');
+            //$udb->connect();
+            $arr = $udb->query_fields_infos('usr');
+            
             $ut = new entity_table(null, $u);
-            $ut->generate_display();
+            $ut->generate_display($arr);
             echo $ut->commit();
         ?>
     </div>
