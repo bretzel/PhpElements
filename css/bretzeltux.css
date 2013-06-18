@@ -213,7 +213,27 @@ button img{
     border:none;
     border-bottom: 2px solid #ff502c;
 }
+.lineedit.accepted{
+    border:none;
+    border-bottom: 2px solid #65b865;
+}
+
+
 
 #topmenu table tr td thead caption tfoot{
     border:none;
+}
+
+#page{
+    margin:10px;
+    padding:10px;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 3px 2px #c0c0c0;
+    background-color: white;
+}
+.copyrights{
+    font-family: Roboto light;
+    font-size: 8pt;
+    
+    
 }

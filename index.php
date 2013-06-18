@@ -30,7 +30,8 @@
                     <table cellspacing="0" cellpadding="0" style="max-height: 26px;">
                         <tr style="max-height: 26px;">
                             <td>
-                                <div id="nav-icon"><img src='css/images/computer1.png' width="18px" height="18px"/></div>
+<!--                                <div id="nav-icon"><img src='css/images/computer1.png' width="18px" height="18px"/></div>-->
+                                &nbsp;&nbsp;
                             </td>
                             <td style="padding-left:3px;">|</td>
                             <td>
@@ -44,7 +45,9 @@
                             </td>
                             <td style="padding-left:3px;">|</td>
                             <td id="userinfo">
-
+                                <?php
+                                    if(!isset($_SESSION['user'])){
+                                ?>
                                 <table id='login-form'>
                                     <tbody>
                                         <tr>
@@ -60,7 +63,12 @@
                                         </tr>
                                         </tboby>
                                 </table>
-
+                                <?php
+                                    }
+                                    else{
+                                        echo "user is authentified!";
+                                    }
+                                ?>
                             </td>
                         </tr>
                     </table>
@@ -72,26 +80,31 @@
         <div id="wrapper">
             <div id="page">
                 <h1>In Construction</h1>
+                <hr />
                 <?php
-                    include 'elements/forms.inc';
-                    $fields = new tfields(NULL, 'fields-test');
-                    $f = new fielddata();
-                    $f->name = 'username';
-                    $fields->add_field($f);
-                    echo $f->name;
-                    
+                include 'elements/forms.inc';
+                $fields = new tfields(NULL, 'fields-test');
+                $f = new fielddata();
+                $f->name = 'username';
+                $fields->add_field($f);
+                echo $f->name;
                 ?>
                 <br /> 
-                <input id="datep" size="10" class='lineedit normal' type="text" name="bday">
+                <input id="datep" size="10" class='lineedit accepted' type="text" name="bday">
                 <script>
                     jQuery("#datep").datepicker({
-                        changeMonth : true,
-                        changeYear  : true,
-                        buttonImage : 'css/images/icons/calendar-blue.png',
-                        showOn      : 'button'
+                        changeMonth: true,
+                        changeYear: true,
+                        buttonImage: 'css/images/icons/calendar-blue.png',
+                        showOn: 'button'
                     });
                 </script>
             </div>
+            <hr />
+            <footer>
+                <div class="copyrights">&copy;2013, Serge Lussier (bretzel, lussier.serge@gmail.com) | Design: Serge Lussier | Graphics: Creative Common and [L]GPL | jQuery, jQueryUI </div>
+            </footer>
         </div>
+
     </body>
 </html>
