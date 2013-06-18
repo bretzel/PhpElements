@@ -25,113 +25,73 @@
     <body>
         <div id="fond"> 
             <div class="ruban">     
-                <h2>Hello, I am bretzel, Welcome to my Home Page! :-)</h2>     
+                <h2>Hello, I am bretzel, Welcome to my Home Page! :-)</h2>
+                <div id="topmenu" class="topmenu">
+                    <table cellspacing="0" cellpadding="0" style="max-height: 26px;">
+                        <tr style="max-height: 26px;">
+                            <td>
+                                <div id="nav-icon"><img src='css/images/computer1.png' width="18px" height="18px"/></div>
+                            </td>
+                            <td style="padding-left:3px;">|</td>
+                            <td>
+                                <ul>
+                                    <li>home</li>
+                                    <li>projects</li>
+                                    <li>about</li>
+                                    <li>contact</li>
+                                    <li>user</li>
+                                </ul>
+                            </td>
+                            <td style="padding-left:3px;">|</td>
+                            <td id="userinfo">
+
+                                <table id='login-form'>
+                                    <tbody>
+                                        <tr>
+                                            <td><input id="in_username" type="text" class='lineedit normal' name="in_username" lenght='16' maxlength="16"  placeholder="username" value='' title='Your username'/></td>
+                                            <td><input id="in_password" type="password" class='lineedit error' name="in_password" lenght='16' maxlength="16" placeholder="password" value=''  title='Your password'/></td>
+                                            <td>
+                                                <div id="login_button" style="cursor:pointer; width:22px; height:22px;background:url('css/images/icons-22x22/system-lock-screen1.png') 22px 22px ;"></div>
+                                                <!--                                            <button id='login' title='login'>&nbsp;</button>
+                                                                                            <script>
+                                                                                                jQuery("#login").button({text:'', icons:{primary:'ui-icon-key'}});
+                                                                                            </script>-->
+                                            </td>
+                                        </tr>
+                                        </tboby>
+                                </table>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>     
             <div class="ruban_gauche"></div>
             <div class="ruban_droit"></div>
         </div>
         <div id="wrapper">
-            <table style="width:200px;">
-                <tbody>
-                    <tr>
-                        <th>vh1</th>
-                        <td> col 1</td>
-                        <td> col 2</td>
-                    </tr>
-                    <tr>
-                        <th>vh2</th>
-                        <td> col 1</td>
-                        <td> col 2</td>
-                    </tr>
-                </tbody>
-                <caption>caption</caption>
-                <thead>
-                    <tr>
-                        <th></th><th>h1</th><th>h2</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>R:</th>
-                        <th>1000.0123L</td>
-                        <th>1234.0123L</td>
-                    </tr>
-                </tfoot>
-            </table>
-
-            <table style="width:200px;">
-                <caption>user informations</caption>
-                <tbody>
-                    <tr>
-                        <th>id</th>
-                        <td>0000000001</td>
-
-                    </tr>
-                    <tr>
-                        <th>username</th>
-                        <td>serge.lussier@arknowledgesys.com</td>
-                    </tr>
-                <tfoot>
-                </tfoot>
-            </tbody>
-        </table>
-
-        <div>
-            <h3>php generated table test [with entity]:</h3>
-            <?php
-                include 'elements/tables.inc';
-
-                class usr
-                {
-                    var $id         ="0000000001";
-                    var $name       ="Serge Lussier";
-                    var $username   ="serge.lussier";
-                    var $email      ="serge.lussier@arknowledgesys.com";
-                    var $passwd     ="secret";
-                    var $alias      ="bretzel";
-                    var $birthdate  ="1965/04/25 08:50";
-                    var $active     = true;
-                    var $admlevel   = 10;
-                }
-                
-                $u = new usr;
-                $cols = array("name","length","type","decimals");
-                
-                $ut = new entity_table(null, $u,'user data informations');
-                echo $ut->display()->commit();
-                echo "<h3>table informations:</h3>";
+            <div id="page">
+                <h1>In Construction</h1>
+                <?php
+                    include 'elements/forms.inc';
+                    $fields = new tfields(NULL, 'fields-test');
+                    $f = new fielddata();
+                    $f->name = 'username';
+                    $fields->add_field($f);
+                    echo $f->name;
                     
-                $mdb = new dbobject(NULL, 'bretzeltux', 'lus4vr47', 'bretzeltux');
-                $data = $mdb->query_fields_infos('usr');
-                
-                $dbt = new table(null, 'table-informations');
-                $dbt->caption("caption-id")->text("table 'usr' informations");
-                $th = $dbt->init_thead();
-                foreach($data as $h)
-                {
-                    //var_dump($h);
-                    foreach($cols as $colname)
-                        $th->append_column($colname.'-head')->text($colname);
-                    break;
-                }
-                
-                $types = dbobject::types();
-                foreach($data as $h=>$column)
-                {
-                    $r = $dbt->append_row('data');
-                    foreach($cols as $name)
-                    {
-                        error_log($name.":".$column->$name);
-                        if($name=="type")
-                            $r->append_column('d')->text($types[$column->$name]);
-                        else
-                            $r->append_column('d')->text($column->$name);
-                    }
-                }
-                echo $dbt->commit();
-            ?>
-            <br /> <br />
+                ?>
+                <br /> 
+                <input id="datep" size="10" class='lineedit normal' type="text" name="bday">
+                <script>
+                    jQuery("#datep").datepicker({
+                        changeMonth : true,
+                        changeYear  : true,
+                        buttonImage : 'css/images/icons/calendar-blue.png',
+                        showOn      : 'button'
+                    });
+                </script>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
