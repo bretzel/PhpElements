@@ -32,7 +32,7 @@ body
     background-color: white;/*#e8e8e8;*/
     background-image: url('images/bg2.png');
     margin : 10px auto;
-    margin-top: 10px;
+    
 }
 
 pre {
@@ -85,11 +85,11 @@ hr
     background: url("images/bg-finegrain.png");
 }
 
-table{ border: 1px solid #ccf5ff;border-collapse:collapse; background-color: white;}
-td { border: 1px solid #ccf5ff; text-align: left; padding-left:5px; padding-right:5px;}
+/*table{ border: 1px solid #ccf5ff;border-collapse:collapse; background-color: white;}
+td { border: 1px solid #ccf5ff; text-align: left; padding-left:5px; padding-right:1px;}
 th { border-right: 1px solid #ccf5ff; border-bottom: 1px solid #c0f5ff; text-align: right;background-color: #fff;}
 caption{ 
     border: 1px solid #c0f5ff;
     border-bottom : none;
     background-color: white;
-}
+}*/

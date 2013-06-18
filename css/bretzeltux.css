@@ -10,21 +10,59 @@ root {
     display: block;
 }
 
+.topmenu{
+    color:#004276;
+}
+.topmenu ul{
+    -webkit-padding-start: 1px;
+    padding: 0px;
+}
+.topmenu li{
+    list-style  : none;
+    display     : inline-table;
+    padding-left: 6px;
+    vertical-align:middle;
+    cursor: pointer;
+}
+.topmenu li:hover{
+    border-bottom: 1px solid #3387CC;
+}
+
+.topmenu table{
+    border-spacing: 0px !important;
+    padding:0px !important;
+    margin-left: 10px !important;
+    border:none;
+}
+
+.topmenu td {
+    border:none !important;
+}
+
+
+
+#nav-icon{
+    padding-left:35px;
+    /*padding-top: 5px;*/
+}
+
+
+
 #fond {
     position: relative;
     margin: 0px auto;
-    width: 650px;
+    width: 700px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
     z-index: 10;
-    height:80px;
+    height:115px;
 }
 
 .ruban {
     background: #3387CC;
     height: 50px;
-    width: 680px;
+    width: 730px;
     position: relative;
     left:-15px;
     top: 10px;
@@ -60,7 +98,7 @@ root {
     height:0px;
     width:0px;
     position: relative;
-    left: 650px;
+    left: 700px;
     top: 15px;
     z-index: -1;
 }
@@ -72,11 +110,22 @@ root {
 #wrapper
 {
     position: relative;
-    margin:10px auto;
-    width : 1280px;
+    margin:25px auto;
+    width : 1024px;
 }
 
+button{
+    padding:0px;
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+}
 
+button img{
+    width: 18px;
+    height: 18px;
+}
 #archlinux{
     background-image: url('images/arch-logo.png');
     background-repeat: no-repeat;
@@ -141,26 +190,30 @@ root {
     background-color: white !important ;
     font-family: Roboto;
     font-size: 9pt;
+    padding-right:5px;
+    margin-left: 2px;
 }
 
-.lineedit .normal{
+.lineedit.normal{
     border:none;
     border-bottom: 2px solid #3387CC;
 }
 
-.lineedit .modified{
+.lineedit.modified{
     border:none;
     border-bottom: 2px solid #98fb98;
 }
 
-.lineedit .error{
+.lineedit.error{
     border:none;
     border-bottom: 2px solid #da502c;
 }
 
-.lineedit .required{
+.lineedit.required{
     border:none;
     border-bottom: 2px solid #ff502c;
 }
 
-
+#topmenu table tr td thead caption tfoot{
+    border:none;
+}
