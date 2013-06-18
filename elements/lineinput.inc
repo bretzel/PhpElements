@@ -1,5 +1,5 @@
 <?php
-require_once 'element.inc';
+require_once 'elements/elements.inc';
 
 /*
  * To change this template, choose Tools | Templates
@@ -25,14 +25,6 @@ class lineinput extends element{
         $this->inlinecss('display', 'inline-table');
         $this->placeholder = $placeholder;
         $this->build();
-    }
-    
-    private function build(){
-        
-        $this->css("text ui-widget-content ui-corner-all");
-        //$js = new element($this->parent(),'');
-        //$js->tagname('script', true);
-        //$js->addinnertext("$('#".$this->id()."').clearable();");
     }
 }
 
