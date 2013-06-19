@@ -22,7 +22,7 @@ class fielddata extends element
     var $def;
     var $size; ///< width of the field in number of characters
     
-    public function __construct($p, $i) {
+    public function __construct(mixed $p, string $i) {
         parent::__construct($p, $i);
     }
     
@@ -43,6 +43,7 @@ class fielddata extends element
             case 'PASSWORD':
                 $this->htmltag('input');
                 $this->attribute('type', 'password');
+                $this->attribute('size','17');
                 break;
             case 'DATE':
                 $this->htmltag('input');

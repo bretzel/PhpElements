@@ -32,20 +32,25 @@ class element extends obj{
         if($tname) 
             $this->tag = $tname;
         $this->close_tag = $close_tag;
+        return $this;
     }
     
     function htmltag($t=null,$closing=false) 
     { 
-        if($t)
+        if($t){
             $this->tag = $t; 
+            return $this;
+        }
         $this->close_tag = $closing;
         return $this->tag;
     }
     
     
     function cls($cname=null){
-        if($cname) 
+        if($cname){
             $this->attr("class", $cname);
+            return $this;
+        }
         return $this->attributesarray['class'];
     }
     
@@ -57,15 +62,20 @@ class element extends obj{
     
     function css($sel, $values){
         $this->inlinestylearray[$sel] = $values;
+        return $this;
     }
     
     function attribute($attr_name, $value){
         $this->attributesarray[$attr_name] = $value;
+        return $this; // for chaining
     }
     
     function text($txt=null){
-        if($txt) $this->innertext .= $txt;
-        return $this->innertext;
+        if($txt){
+            $this->innertext .= $txt;
+            return $this; // for chaining
+        }
+        return $this->innertext; // text contents was required. - no chaining
     }
     
     function onserialize_selector($sel, $line){
@@ -81,6 +91,7 @@ class element extends obj{
     */
     function clear(){
         $this->stream = "";
+        return $this;
     }
     
     
@@ -95,6 +106,7 @@ class element extends obj{
         if($y) $this->_g['top']  = obj::tr_geometry($y);
         $this->_g['width']  = obj::tr_geometry($dx,true);
         $this->_g['height'] = obj::tr_geometry($dy,true);
+        return $this;
     }
     
     function height($h=null)
@@ -155,6 +167,7 @@ class element extends obj{
         $js = new element($this->parent(), '');
         $js->htmltag('script', true);
         $js->text($cod);
+        return $this;
     }
     
     // -------------  Some common used inline javascript events, functions... --------------
