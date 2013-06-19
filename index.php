@@ -53,8 +53,11 @@
                         buttonImage: 'css/images/icons/calendar-blue.png',
                         showOn: 'both'
                     });
+                    ejs.login_form_check();
                 </script>
             </div>
+            <textarea id="log" rows="4" cols="40" value="">
+            </textarea>
             <hr />
             <footer>
                 <div class="copyrights">&copy;2013, Serge Lussier (bretzel, lussier.serge@gmail.com) | Design: Serge Lussier | Graphics: Creative Common and [L]GPL | jQuery, jQueryUI </div>

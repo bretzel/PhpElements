@@ -47,14 +47,18 @@ class service  {
 
     static public function login() {
         
-        $uname = $_POST['username'];
-        $pass = $_POST['password'];
-        $u = usr::login($uname, $pass);
-        if ($u)
-            service::post_login($u);   
-        else
-            object::throw_error(1, 'loginfailed', 'username or password mismatch');
-        return true;
+//         $uname = $_POST['username'];
+//         $pass = $_POST['password'];
+//         $u = usr::login($uname, $pass);
+//         if ($u)
+//             service::post_login($u);   
+//         else
+//             object::throw_error(1, 'loginfailed', 'username or password mismatch');
+//         return true;
+           $response = array("error"=>"service not available");
+           $response = obj::encode_array($response,true);
+           echo $response;
+           exit();
     }
     
     static public function post_login($u){

@@ -22,23 +22,25 @@ title{
     color:#004276;
 }
 .topmenu ul{
-    -webkit-padding-start: 1px;
-    padding: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .topmenu li{
     list-style  : none;
     display     : inline-table;
-    padding-left: 6px;
+/*     padding-left: 6px; */
     vertical-align:middle;
     cursor: pointer;
 }
 .topmenu li:hover{
-    border-bottom: 1px solid #3387CC;
+    border-bottom: 2px solid #3387CC;
 }
 
 
 .topmenu li.active{
-    border-bottom: 1px solid #3387CC;
+    border-bottom: 2px solid #3A612D; 
+    /*#3387CC;*/
+    color        : #3A612D;
 }
 
 .topmenu table{
@@ -254,7 +256,7 @@ button img{
     margin:10px;
     padding:10px;
     border-radius: 3px;
-    box-shadow: inset 0px 0px 3px 2px #c0c0c0;
+    box-shadow: inset 0px 0px 9px #c09090;
     background-color: white;
 }
 .copyrights{

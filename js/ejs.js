@@ -88,19 +88,22 @@ ejs = {
         return true;
     },
     userlogin: function(e) {
-        var d= $(ejs);
-        
-        $.post("services.php", {message: "login", username: $('#in_username').val(), password: $('#in_password').val()})
+        $.post("services.php", {service: "login", username: $('#in_username').val(), password: $('#in_password').val()})
                 .done(
                 function(stream) {
-                    $(d).response = eval('(' + stream + ')');
-                    if($(d).error){
-                        $('#in_username').attr('placeholder','username');
+                    
+                    ejs.response = eval('(' + stream + ')');
+                    if(typeof ejs.response.error != 'undefined'){
+                        //$('#in_username').attr('placeholder','username');
+                        $('#in_username').removeClass();
+                        $('#in_username').addClass('lineedit error');
                         $('#in_username').val('');
                         $('#in_password').val('');
+                        $('#in_password').removeClass();
+                        $('#in_password').addClass('lineedit error');
                         return false;
                     }
-                    $("#loginform").html($(d).stream);
+                    
                     return true;
                 }
                 )
