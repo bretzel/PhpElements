@@ -94,13 +94,21 @@ ejs = {
                     
                     ejs.response = eval('(' + stream + ')');
                     if(typeof ejs.response.error != 'undefined'){
-                        //$('#in_username').attr('placeholder','username');
+                        $('#in_username').attr('placeholder','error');
                         $('#in_username').removeClass();
                         $('#in_username').addClass('lineedit error');
                         $('#in_username').val('');
                         $('#in_password').val('');
-                        $('#in_password').removeClass();
-                        $('#in_password').addClass('lineedit error');
+                        //$('#in_password').removeClass().fadeOut(400);
+                        $('#in_password').addClass('lineedit error').fadeOut(500).fadeIn(500);//.removeClass('error').fadeOut(500).addClass('normal').fadeIn(500);
+                        $('#in_username').addClass('lineedit error').fadeOut(500).fadeIn(500);//.removeClass('error').fadeOut(500).addClass('normal').fadeIn(500);;
+                        $('#in_username').attr('placeholder','username');
+                        console.log("error: " + ejs.response.error);
+//                         $('#in_username').removeClass('error');
+//                         $('#in_username').addClass('normal').fadeIn(1000);
+//                         $('#in_password').removeClass('error').delay(1100);
+//                         $('#in_password').addClass('normal');
+//                         $('#in_username').attr('placeholder','username');
                         return false;
                     }
                     

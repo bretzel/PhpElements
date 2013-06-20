@@ -6,12 +6,154 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
-    display: block;
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+@import url(http://fonts.googleapis.com/css?family=Roboto:700);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:500);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+
+
+
+
+
+*
+{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+body, textarea
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    color: #565656;
+}
+
+body
+{
+    background-color: white;/*#e8e8e8;*/
+    background-image: url('images/bg2.png');
+    margin : 10px auto;
+    
+}
+
+pre {
+    font-family: "Source Code Pro";
+    font-size: 8pt;
+/*    border-width: 1px;
+    border-style: solid;*/
+    box-shadow: inset 0px 0px 8px #c0c0c0;
+    padding: 10px;
+}
+
+
+
+input[type=text]{
+    border: none;
+    outline : none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #565656;
+}
+
+hr
+{
+    border: 0;
+    border-top: solid 1px #ccc;
+    padding: 1.5em 0 0 0;
+    margin: 1.75em 0 0 0;
+}
+
+.image
+{
+    display: inline-block;
+}
+
+.input-wraper {
+/*    border: 1px solid darkblue;
+    border-radius:  2px;*/
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom:1;
+    display:inline;
+    padding-right:5px;
+    vertical-align:middle;
+    
+    /*min-height: 24px;*/
+}
+
+.finegrain{
+    /*min-height: 32px;*/
+    background: url("images/bg-finegrain.png");
+
+}
+
+/*table{
+    /*border: 1px solid #ccf5ff;
+    border-collapse:collapse; 
+    background-color: white;
+    /*margin:0 0 0 0;
+    padding : 0px 0px 0px 0px;*/
+    
+}*/
+
+tr{
+    border-bottom: 2px solid #ccf5ff; 
+}
+
+/*td { 
+    border: 1px solid #ccf5ff; 
+    text-align: left; 
+    padding-left:5px; 
+    padding-right:1px;
+    margin:0;
+}
+
+th { 
+    border-right: 1px solid #ccf5ff; 
+    border-bottom: 1px solid #c0f5ff; 
+    text-align: right;
+    background-color: #fff;
+    margin:0;
+    
+}
+
+caption{ 
+    border: 1px solid #c0f5ff;
+    border-bottom : none;
+    background-color: white;
+    margin:0;
+}*/
+
+
+
+h1{
+    margin:0px ;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+#Arknowledge{
+    color:#60bbff; 
+    font-family:Roboto;
+    font-size:18pt; 
+    font-style:italic;
+    vertical-align:center;
+    position:absolute;
+    left:15px;
+    top:8px;
+    text-shadow: 1px 1px 2px #000050;
+}
 title{
-    padding : 5px;
+/*     padding : 5px; */
     background-color: #3387CC;
     color: white;
     font-family: Roboto;
@@ -20,6 +162,7 @@ title{
 
 .topmenu{
     color:#004276;
+    font-family: Open Sans Condensed;
 }
 .topmenu ul{
     padding-left: 5px;
@@ -38,20 +181,22 @@ title{
 
 
 .topmenu li.active{
-    border-bottom: 2px solid #3A612D; 
+    border-bottom: 2px solid #3387CC;
     /*#3387CC;*/
-    color        : #3A612D;
+    color        :#64A664;
+    font-style:italic;
+/*     text-shadow: 1px 1px 1px #3387CC; /*#528852;*/ */
 }
 
 .topmenu table{
-    border-spacing: 0px !important;
-    padding:0px !important;
-    margin-left: 10px !important;
+    border-spacing: 0px ;
+    padding:0px ;
+    margin-left: 10px;
     border:none;
 }
 
 .topmenu td {
-    border:none !important;
+    border:none;
 }
 
 
@@ -71,7 +216,7 @@ title{
     border-radius: 5px;
     box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
     z-index: 10;
-    height:115px;
+    height:110px;
 }
 
 .ruban {
@@ -80,14 +225,14 @@ title{
     width: 730px;
     position: relative;
     left:-15px;
-    top: 10px;
+    /*top: 10px;*/
     float: left;
     box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
     z-index: 100;
 }
 
 .ruban.arknowledgesys {
-    background: #A04040;
+    background: #904040;
     height: 50px;
     width: 730px;
     position: relative;
@@ -103,7 +248,8 @@ title{
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     text-align: center;
-    margin:12px;
+    vertical-align:middle;
+/*     margin:12px; */
 }
 
 .ruban_gauche {
@@ -197,7 +343,7 @@ button img{
 
 #copyright a
 {
-    color: inherit !important;
+    color: inherit ;
     
 }
 
@@ -215,7 +361,7 @@ button img{
 .lineedit{
     border  : none;
     outline : none;
-    background-color: white !important ;
+    background-color: white  ;
     font-family: Roboto;
     font-size: 9pt;
     padding-right:5px;
@@ -255,8 +401,9 @@ button img{
 #page{
     margin:10px;
     padding:10px;
-    border-radius: 3px;
-    box-shadow: inset 0px 0px 9px #c09090;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    
     background-color: white;
 }
 .copyrights{
@@ -265,3 +412,14 @@ button img{
     
     
 }
+
+
+
+.fieldrow{
+    
+}
+
+.fieldrow tr{
+    border-bottom: 1px solid #ccf5ff;
+}
+
