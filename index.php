@@ -61,7 +61,7 @@
 
             </div>
             <section id='main'>
-                main
+                Hello, Word :-) 
                 <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
             </section>
             <hr />
