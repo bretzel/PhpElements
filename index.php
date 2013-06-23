@@ -44,7 +44,7 @@
                                     // And make this active
                                     $(this).addClass("active");
                                     // do the activation of this menu item
-                                    //$("#log").append($(this).attr("id") + " activated\n");
+                                    $("#log").append("<h4>" + $(this).attr("id") + " activated </h4" );
                                 }
                             });
                     </script>
@@ -68,6 +68,11 @@
                 <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
             </section>
             <hr />
+            <footer>
+                <div id="log" class="fwindow" style="with:400px; height:200px; display:relative; left:25px; text-align:left; color:#c0c0c0;overflow:auto;">
+                    
+                </div>
+            </footer>
         </div> <!-- ID pg-root END -->
     </body>
 </html>
