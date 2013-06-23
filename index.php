@@ -66,7 +66,26 @@
             </section>
             <hr />
             <footer>
-                <div id="log" class="fwindow" style="with:400px; height:200px; display:relative; left:25px; text-align:left; color:#c0c0c0;overflow:auto;">
+                <div id="log-section">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id="log" class="fwindow" style=" display:none; width:400px; height:100px; text-align:left; color:#c0c0c0;overflow:auto;">
+                                </td>
+                                <td style="vertical-align:top;">
+                                    <img src="css/images/icons-22x22/tray-message.png" id="log-icon" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <script>
+                        $("#log").hide();
+                        $("#log-icon").click(function(){
+                            $("#log").toggle("clip");
+                        });
+                    </script>
+                    </div>
                     
                 </div>
             </footer>
