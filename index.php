@@ -43,6 +43,7 @@
                                     $("li.active").removeClass("active");
                                     // And make this active
                                     $(this).addClass("active");
+                                    // do the activation of this menu item
                                     //$("#log").append($(this).attr("id") + " activated\n");
                                 }
                             });
