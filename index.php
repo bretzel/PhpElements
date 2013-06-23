@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>&& JSR-0XFFD2</title>
+        <title>&& JSR-0XFFD2 bretzel</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -25,17 +25,49 @@
     </head>
     <body>
         <div id="pg-root">
-            <header id="main-header" style="display:bloc;">
-                <div id='bretzel-logo' class="fwindow" style="display:inline-table;">
-                    bretzel's home page!
-                </div>
-                <div class="box1" id="main-bar" style="display:inline-table; ">
-                    <h4 style='display: inline-table'>In construction...</h4> You have reached my computer's web services :-)
-                </div>
+            <div id='bretzel-logo' class="fwindow">
+                <span style="float:left;font-style: italic;top:3px;position:relative;">@bretzel::homepage </span>
+                <header id="main-header" style="display:inline-table;">
+                <ul id="main-bar" class="box1">
+                    <li id="menu-home"  class="left-margin active"  >home |</li>
+                    <li id="menu-blog"    >blog |</li>
+                    <li id="menu-projects">personal projects |</li>
+                    <li id="menu-about"   >about |</li>
+                    <li id="menu-contact" class="right-margin">contact</li>
+                    <script>
+                        jQuery("li").click(
+                            function(){
+                                // If this isn't already active
+                                if (!$(this).hasClass("active")) {
+                                    // Remove the class from anything that is active
+                                    $("li.active").removeClass("active");
+                                    // And make this active
+                                    $(this).addClass("active");
+                                    //$("#log").append($(this).attr("id") + " activated\n");
+                                }
+                            });
+                    </script>
+                </ul>
+                <table style="display:inline-table; text-align:left" width="200">
+                    <tr>
+                        <td>
+                            <div id="usersection">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </header>
+
+            </div>
+            <br />
+            <hr />
+            
             <section id='main'>
                 main
+                <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
             </section>
+            <hr />
         </div> <!-- ID pg-root END -->
     </body>
 </html>
+

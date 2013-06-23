@@ -19,50 +19,119 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:500);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
+/* site layout */
+* {
+   margin: 0;
+   padding: 0;
+   border: none;
+}
 
 body
 {
     background-color: #f0f0f0;
     background-image: url('images/grey_wash_wall.png');
     margin : 10px auto;
-    
+    /*display: -webkit-flex;*/
+    text-align:center;
 }
 
-/* site layout */
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
 
 
 #pg-root{
-  margin:10px;  
+  margin:auto;
+  display: bloc;
+/*   text-align:center; */
 }
 
 #bretzel-logo{
     font-family: Roboto;
     font-size:   16pt;
-    color:#00d0d0;
-    text-shadow: 0px 0px 12px #87ceeb;
+    color:#00d0de;
+    text-shadow: 0px 0px 12px #111;
+    display:inline-table;
+    width:auto;
+    
 }
+
+
 #main-bar{
     margin-left     : 25px; 
-    margin-right    : 25px;
-    margin-bottom   : 25px;
-    margin-top: -10px;
-    padding         : 5px;
+    margin-right    : 4px;
+    margin-bottom   : 0;
+    display: inline-table;
+    
 }
 
 #main-bar h4{
     font-family: Roboto;
     font-size :  9pt;
     color     :  #c0c0c0;
+    display         : inline-table;
+    
+    
 }
 
 
+.l-icon{
+    background-size: 16px 16px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.right-margin{
+    margin-right:16px;
+}
+
+.left-margin{
+    margin-left:16px;
+}
+
+
+#main-bar ul{
+    display:inline-table;
+    margin:0;
+    width:100%;
+}
+
+#main-bar ul:first-child{
+    margin-left: 15px;
+}
+
+
+#main-bar li{
+    display: inline-table;
+    list-style: none;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:#c0c0c0;
+    font-size: 12pt;
+    font-family: Open Sans Condensed;
+    cursor:pointer;
+    margin-right:5px;
+}
+
+
+
+/*#main-bar li a{
+    text-decoration:none;
+}*/
+
+#main-bar li:hover{
+    color:#00d0d0;
+}
+
+#main-bar li.active{
+    color:#00d0d0;
+    border-bottom:2px solid #00d0de;
+}
+
 #main{
-    
+    display: bloc;
+    position:relative;
+    margin:auto;
+    top:5px;
+    text-align: left;
+    width:1024px;
 }
 
 
