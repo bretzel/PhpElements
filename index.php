@@ -59,9 +59,6 @@
             </header>
 
             </div>
-            <br />
-            <hr />
-            
             <section id='main'>
                 main
                 <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
