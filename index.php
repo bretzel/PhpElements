@@ -46,6 +46,8 @@
                                     // do the activation of this menu item
                                     $("#log").append("<h4>" + $(this).attr("id") + " activated - page id:" + $(this).attr("name") + "</h4>" );
                                     ejs.master_menu($(this).attr("name"));
+                                    
+                                    
                                 }
                             });
                     </script>

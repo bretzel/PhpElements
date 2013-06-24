@@ -44,10 +44,10 @@ ejs = {
         });
     },
     master_menu: function(page_id) {
+        $("#main").empty().append("<div style='text-align:center;vertical-align:middle;height:100%'><img src='css/images/loading.gif' style='position:absolute;top:220px;left:250px;'/></div>").fade("100");
         $.post("services.php", {service: "load_page", id: page_id})
                 .done(function(stream) {
-            $("#main").empty();
-            $("#main").append(stream);
+            $("#main").empty().append(stream);
             return true;
         });
 

@@ -34,9 +34,15 @@ class service  {
     static public function load_page() {
         error_log("page id to load:".$_POST['id']);
         $pgid = $_POST['id'];
-        $php = "pages/$pgid.php";
-        include $php;
-        home::load();
+        include  "pages/".$pgid.".php";
+        switch($pgid){
+            case 'home':
+                home::load();
+                return true;
+            default:
+                echo "$pgid: not yet implemented - please be patient!";
+                return true;
+        }
         return true;
     }
 
