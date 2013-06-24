@@ -73,6 +73,14 @@ body
 }
 
 
+#home{
+    background-image: url("images/home-512.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+
 .l-icon{
     background-size: 16px 16px;
     background-position: left center;

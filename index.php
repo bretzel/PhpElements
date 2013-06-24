@@ -29,11 +29,11 @@
                 <span style="float:left;font-style: italic;top:3px;position:relative;">@bretzel::homepage </span>
                 <header id="main-header" style="display:inline-table;">
                 <ul id="main-bar" class="box1">
-                    <li id="menu-home"  class="left-margin active"  >home |</li>
-                    <li id="menu-blog"    >blog |</li>
-                    <li id="menu-projects">personal projects |</li>
-                    <li id="menu-about"   >about |</li>
-                    <li id="menu-contact" class="right-margin">contact</li>
+                    <li id="menu-home"  name="home" class="left-margin active"  >home |</li>
+                    <li id="menu-blog"  name="blog"  >blog |</li>
+                    <li id="menu-projects" name="projects">personal projects |</li>
+                    <li id="menu-about"   name="about">about |</li>
+                    <li id="menu-contact" name="contact" class="right-margin">contact</li>
                     <script>
                         jQuery("li").click(
                             function(){
@@ -44,7 +44,8 @@
                                     // And make this active
                                     $(this).addClass("active");
                                     // do the activation of this menu item
-                                    $("#log").append("<h4>" + $(this).attr("id") + " activated </h4" );
+                                    $("#log").append("<h4>" + $(this).attr("id") + " activated - page id:" + $(this).attr("name") + "</h4>" );
+                                    ejs.master_menu($(this).attr("name"));
                                 }
                             });
                     </script>
@@ -61,8 +62,7 @@
 
             </div>
             <section id='main'>
-                Hello, Word :-) 
-                <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
+                
             </section>
             <hr />
             <footer>
@@ -71,7 +71,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div id="log" class="fwindow" style=" display:none; width:400px; height:100px; text-align:left; color:#c0c0c0;overflow:auto;">
+                                    <div id="log" class="fwindow" style=" display:none; width:400px; height:32px; text-align:left; color:#c0c0c0;overflow:auto;">
                                 </td>
                                 <td style="vertical-align:top;">
                                     <img src="css/images/icons-22x22/tray-message.png" id="log-icon" />

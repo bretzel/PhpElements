@@ -44,10 +44,10 @@ ejs = {
         });
     },
     master_menu: function(page_id) {
-        $.post("services.php", {message: "load_page", id: page_id})
+        $.post("services.php", {service: "load_page", id: page_id})
                 .done(function(stream) {
-            $("#content").empty();
-            $("#content").append(stream);
+            $("#main").empty();
+            $("#main").append(stream);
             return true;
         });
 

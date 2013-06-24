@@ -32,9 +32,11 @@ class service  {
         exit();
     }
     static public function load_page() {
-        include "mastermenu/mastermenu.php";
+        error_log("page id to load:".$_POST['id']);
         $pgid = $_POST['id'];
-        mastermenu::load_page($pgid);
+        $php = "pages/$pgid.php";
+        include $php;
+        home::load();
         return true;
     }
 
