@@ -35,6 +35,8 @@ class element extends obj{
         return $this;
     }
     
+    function tag(){ return $this->tag; }
+    
     function htmltag($t=null,$closing=false) 
     { 
         if($t){
@@ -48,7 +50,7 @@ class element extends obj{
     
     function cls($cname=null){
         if($cname){
-            $this->attr("class", $cname);
+            $this->attribute("class", $cname);
             return $this;
         }
         return $this->attributesarray['class'];
@@ -73,6 +75,7 @@ class element extends obj{
     function text($txt=null){
         if($txt){
             $this->innertext .= $txt;
+            error_log($this->tag . ":innertext:'".$this->innertext);
             return $this; // for chaining
         }
         return $this->innertext; // text contents was required. - no chaining
@@ -148,6 +151,7 @@ class element extends obj{
         
         if($this->close_tag){
             $this->stream .= " >\n";
+            error_log($this->id() ." :: innertext:'" . $this->innertext ."'");
             if($this->innertext)
                 $this->stream .= $this->innertext ."\n";
         }
@@ -164,9 +168,9 @@ class element extends obj{
     
     
     function code($cod){
-        $js = new element($this->parent(), '');
-        $js->htmltag('script', true);
+        $js = new element($this->parent(), '', 'script',true);
         $js->text($cod);
+        error_log("parent[".$this->parent()->id()."]:this[".$this->id()."]->code:".$cod);
         return $this;
     }
     
@@ -222,6 +226,7 @@ class element extends obj{
             $le->attribute ('maxlength', $max);
         if($ph) 
             $le->attribute('placeholder',$ph);
+        $le->cls("lineedit");
         return $le;
     }
     

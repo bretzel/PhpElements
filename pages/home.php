@@ -1,6 +1,7 @@
 <?php
 
     require_once 'elements/elements.inc';
+    require_once 'elements/lineinput.inc';
     
 /*
  * <one line to give the program's name and a brief idea of what it does.>
@@ -55,10 +56,14 @@ class home extends element
                 <p>
                     That's right - this is me :-) 
                 </p>
+                <?php
+                    $i = new lineinput(null,'test','This is a lineinput test','text','type something',true);
+                    $i->sizes(20,22);
+                    echo $i->commit();
+                    return true;
+                ?>
             </div>
-        
-        <?php
-            $i = new lineinput
+            <?php
     }
     
     

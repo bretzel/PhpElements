@@ -88,9 +88,14 @@ body
 }
 
 .clear-icon{
-    background: url("images/close-button.png") 16px 16px center center no-repeat;
-    with:16px;
-    height:16px;
+    background: url("images/icons-22x22/close-exit.png") no-repeat;
+    background-size: 16px;
+    background-position: center;
+    width:16px;
+    height:18px;
+    vertical-align:middle;
+    cursor: pointer;
+    
 }
 
 .right-margin{
