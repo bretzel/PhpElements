@@ -86,12 +86,16 @@
                         $("#log-icon").click(function(){
                             $("#log").toggle("clip");
                         });
+                        
                     </script>
                     </div>
                     
                 </div>
             </footer>
         </div> <!-- ID pg-root END -->
+            <script>
+                ejs.master_menu("home");
+            </script>
     </body>
 </html>
 
