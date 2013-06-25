@@ -79,7 +79,11 @@ body
     background-position: center center;
 }
 
-
+#blog{
+    background-image: url("images/icons/blog_compose.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
 
 .l-icon{
     background-size: 16px 16px;
@@ -195,7 +199,7 @@ footer h4{
 
 hr {
     box-shadow : 0px 0px 5px #111;
-    height:1px;
+    height:2px;
     background-color:#00d0de;
 }
 
