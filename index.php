@@ -66,31 +66,9 @@
             <section id='main'>
                 
             </section>
-            <hr />
+            <hr style="width:80%; left:10%; position:absolute;" />
             <footer>
-                <div id="log-section">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div id="log" class="fwindow" style=" display:none; width:400px; height:32px; text-align:left; color:#c0c0c0;overflow:auto;">
-                                </td>
-                                <td style="vertical-align:top;">
-                                    <img src="css/images/icons-22x22/tray-message.png" id="log-icon" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <script>
-                        $("#log").hide();
-                        $("#log-icon").click(function(){
-                            $("#log").toggle("clip");
-                        });
-                        
-                    </script>
-                    </div>
-                    
-                </div>
+                <h4> &copy;2013, Serge Lussier (bretzel), serge.lussier@arknowledgesys.com | Graphics: Creative Commons | jQuery 2.x/jQueryUI. </h4>
             </footer>
         </div> <!-- ID pg-root END -->
             <script>

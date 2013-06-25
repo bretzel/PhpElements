@@ -52,9 +52,13 @@ class home extends element
             <div id="home" style="width:100%; height:100%">
                 Hello, Word :-) 
                 <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
+                <p>
+                    That's right - this is me :-) 
+                </p>
             </div>
         
         <?php
+            $i = new lineinput
     }
     
     

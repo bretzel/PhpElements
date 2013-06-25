@@ -87,6 +87,12 @@ body
     background-repeat: no-repeat;
 }
 
+.clear-icon{
+    background: url("images/close-button.png") 16px 16px center center no-repeat;
+    with:16px;
+    height:16px;
+}
+
 .right-margin{
     margin-right:16px;
 }
@@ -119,7 +125,12 @@ body
     margin-right:5px;
 }
 
-
+footer h4{
+    font-family : Open Sans Condesend;
+    font-size   : 10pt;
+    color       : #c0c0c0;
+    padding-top: 3px;
+}
 
 /*#main-bar li a{
     text-decoration:none;
@@ -181,4 +192,10 @@ hr {
     box-shadow : 0px 0px 5px #111;
     height:1px;
     background-color:#00d0de;
+}
+
+.lineedit{
+    border:none;
+    outline:none;
+    border-bottom: 2px solid #a0a0a0;
 }
