@@ -66,7 +66,7 @@
             <section id='main'>
                 
             </section>
-            <hr style="width:80%; left:10%; position:absolute;" />
+            <hr class="ext" style="width:80%; left:10%; position:absolute;" />
             <footer>
                 <h4> &copy;2013, Serge Lussier (bretzel), serge.lussier@arknowledgesys.com | Graphics: Creative Commons | jQuery 2.x / jQueryUI. </h4>
             </footer>
