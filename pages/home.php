@@ -74,7 +74,7 @@ class home extends element
                 ejs.elements_id();
             </script>
             <?php
-            var_dump($_SERVER);
+            var_dump($_ENV);
             return true;
     }
     
