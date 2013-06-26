@@ -137,7 +137,7 @@ class table extends element{
         return $h;
     }
         
-    public function caption($capid=null)
+    public element function caption($capid=null)
     {
         if($capid !== null)
             $this->icaption = new element($this,$capid,'caption',true);

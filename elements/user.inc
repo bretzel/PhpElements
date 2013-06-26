@@ -30,6 +30,12 @@ class  usr{
         return $cusr;
     }
     
+    public static function create_login_form()
+    {
+        require_once 'elements/forms,inc';
+        
+    }
+    
 }
 
 class users{
