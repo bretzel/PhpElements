@@ -30,7 +30,8 @@ require_once 'elements/obj.inc';
  * 24MYSQL_TYPE_VAR_STRING=253,
  * 25MYSQL_TYPE_STRING=254,
  * 26MYSQL_TYPE_GEOMETRY=255
- *  */
+ *  
+ */
 
 
 
@@ -58,7 +59,8 @@ class dbobject extends obj{
         return $this->dbname;
     }
     private function connect(){
-        $this->dbhandle = new mysqli('localhost', $this->username, $this->password, $this->dbname);
+        // Hehehe! found the way to hide credentials! 
+        $this->dbhandle = new mysqli('localhost', $_SERVER['db_user'], $_SERVER['db_pass'], $_SERVER['db_name']);
         $e = $this->dbhandle->errno;
         if($e > 0){
             object::throw_fatal(array('mysqli connect error #'=>$e, 'error'=>$this->dbhandle->error));
