@@ -1,6 +1,11 @@
 <?php
 //$ipath = get_include_path() . PATH_SEPARATOR . "php" . PATH_SEPARATOR . "mastermenu" . PATH_SEPARATOR . "contents";
 //set_include_path($ipath);
+
+
+/** This is the Master Page into which the elements are either dynamicaly loaded and statics
+    @Author Serge Lussier (bretzel), serge.lussier@arknowledgesys.com; lussier.serge@gmail.com
+*/
 ?>
 <!DOCTYPE HTML>
 
@@ -26,7 +31,7 @@
     <body>
         <div id="pg-root">
             <div id='bretzel-logo' class="fwindow">
-                <span style="float:left;font-style: italic;top:3px;position:relative;">@bretzel::homepage </span>
+                <span id="logo" style="float:left;font-style: italic;top:3px;position:relative;">@bretzel::homepage </span>
                 <header id="main-header" style="display:inline-table;">
                 <ul id="main-bar" class="box1">
                     <li id="menu-home"  name="home" class="left-margin active"  >home |</li>
@@ -52,10 +57,17 @@
                             });
                     </script>
                 </ul>
-                <table style="display:inline-table; text-align:left" width="200">
+                <table style="display:inline-table; text-align:left;vertical-align:middle;" width="200">
                     <tr>
                         <td>
+                            <div id="en" class="flag flag-content flag-us"></div>
+                        </td>
+                        <td>
+                            <div id="fr" class="flag flag-content flag-fr active"></div>
+                        </td>
+                        <td width="100%">
                             <div id="usersection">
+                            
                             </div>
                         </td>
                     </tr>
@@ -73,6 +85,15 @@
         </div> <!-- ID pg-root END -->
             <script>
                 ejs.master_menu("home");
+                ejs.fill_locale('fr');
+                jQuery(".flag").click(function()
+                    {
+                        ejs.fill_locale($(this).attr("id"));
+                        $(".flag").removeClass("active");
+                        $(this).addClass("active");
+                    }
+                );
+                
             </script>
     </body>
 </html>

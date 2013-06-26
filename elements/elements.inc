@@ -75,7 +75,7 @@ class element extends obj{
     function text($txt=null){
         if($txt){
             $this->innertext .= $txt;
-            error_log($this->tag . ":innertext:'".$this->innertext);
+            //error_log($this->tag . ":innertext:'".$this->innertext);
             return $this; // for chaining
         }
         return $this->innertext; // text contents was required. - no chaining
@@ -151,7 +151,7 @@ class element extends obj{
         
         if($this->close_tag){
             $this->stream .= " >\n";
-            error_log($this->id() ." :: innertext:'" . $this->innertext ."'");
+            //error_log($this->id() ." :: innertext:'" . $this->innertext ."'");
             if($this->innertext)
                 $this->stream .= $this->innertext ."\n";
         }
@@ -170,7 +170,7 @@ class element extends obj{
     function code($cod){
         $js = new element($this->parent(), '', 'script',true);
         $js->text($cod);
-        error_log("parent[".$this->parent()->id()."]:this[".$this->id()."]->code:".$cod);
+        //error_log("parent[".$this->parent()->id()."]:this[".$this->id()."]->code:".$cod);
         return $this;
     }
     

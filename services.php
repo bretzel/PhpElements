@@ -82,6 +82,13 @@ class service  {
     {
         
     }
+    
+    static public function fill_locale()
+    {
+        require_once 'pages/ldictionary.inc';
+        l_locale::get_locale($_POST['l']);
+        return true;
+    }
 
 }
 

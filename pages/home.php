@@ -51,18 +51,28 @@ class home extends element
     public static function load(){
         ?>
             <div id="home" style="width:100%; height:100%">
-                Hello, Word :-) 
-                <h4 style='display: inline-table; padding-top:5px;'>In construction...</h4>
+                <h1 id="home-title" class="page-title" >Hello, Word :-)</h1>
                 <p>
-                    That's right - this is me :-) 
+                    Home of Home ... some general speaks, and links...
                 </p>
                 <?php
-                    $i = new lineinput(null,'test','This is a lineinput test','text','type something',true);
-                    $i->sizes(20,22);
-                    echo $i->commit();
-                    return true;
+                    //$i = new lineinput(null,'test','This is a lineinput test','text','type something',true);
+                    //$i->sizes(20,22);
+                    //echo $i->commit();
+                    
                 ?>
+                <!--<div class="rss" id="drdobbs-rss" style="width:500px; height:200px;overflow:auto;">
+                    <h1 class="page-title">drdobbs c++ RSS:</h1>
+                    <script id="feed-1372179977162309" type="text/javascript" src="http://rss.bloople.net/?url=http%3A%2F%2Fwww.drdobbs.com%2Frss%2Fcpp&showtitle=false&type=js&id=1372179977162309"></script>
+                </div>
+                <div class="rss" id="slashdot-rss" style="width:500px; height:200px;overflow:auto;">
+                    <h1 class="page-title">Slashdot RSS:</h1>
+                    <script id="feed-1372181025611212" type="text/javascript" src="http://rss.bloople.net/?url=http%3A%2F%2Frss.slashdot.org%2Fslashdot%2FSlashdot&detail=40&showtitle=false&type=js&id=1372181025611212"></script>
+                </div>-->
             </div>
+            <script>
+                ejs.elements_id();
+            </script>
             <?php
     }
     

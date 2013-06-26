@@ -9,22 +9,33 @@ ejs = {
     username: "",
     userdata: {name:'anonymous'},
     response:{},
-    load_local: function(lang) {
-        $.post("inc/services.php", {message: "load_text", l: lang})
+    
+    
+    elements_id : function(){
+        $('[id]').each(function(index){
+            var e = $(this);
+            var t = e.attr("id");
+            $("#home").append("Index: " + index + " : id:'"+$(this).attr("id")+"'<br />");
+        });
+    },
+    fill_locale: function(lang) {
+        $.post("services.php", {service: "fill_locale", l: lang})
                 .done(function(data) {
             dd = eval('(' + data + ')');
-            console.log(dd.NAV_001);
-            ejs.commit_messages(dd);
+            //console.log(dd.NAV_001);
+            ejs.fill_local(dd);
         }
         );
     },
-    commit_messages: function(data) {
+    fill_local: function(data) {
 
         $.each(data, function(k, d) {
-            //document.write(k);
+            
             o = "#" + k;
-            console.log(o + ":" + d + "\n");
-            jQuery(o).html(d);
+            if(document.getElementById(k)){
+                console.log(o + ":" + d + "\n");
+                jQuery("#"+k).html(d);
+            }
         });
     },
     pull_code: function(receiver_id, file_id) {

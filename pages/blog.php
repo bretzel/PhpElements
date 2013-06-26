@@ -9,7 +9,7 @@ class blog extends element
     {
         ?>
         <div id="blog" style="width:100%;height:100%; display:bloc;">
-            <h1 class="page-title"> My blogging world! - In construction </h1>
+            <h1 id="blog-title" class="page-title"> My blogging world! - In construction </h1>
             <p>
                 Here I will put everythings I have in my brain!
             </p>
@@ -54,7 +54,10 @@ class blog extends element
                 </tbody>    
                 </table>
             
-        </div> 
+        </div>
+        <script>
+            ejs.fill_locale('fr');
+        </script>
         <?php
     }
 }
