@@ -57,23 +57,26 @@
                             });
                     </script>
                 </ul>
-                <table style="display:inline-table; text-align:left;vertical-align:middle;" width="200">
-                    <tr>
-                        <td>
-                            <div id="en" class="flag flag-content flag-us"></div>
-                        </td>
-                        <td>
-                            <div id="fr" class="flag flag-content flag-fr active"></div>
-                        </td>
-                        <td width="100%">
-                            <div id="usersection">
-                            
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                <div id="user-icon-small">
+                    <div id="user-dialog"></div>
+                </div>
+                <script>
+                
+                </script>
             </header>
-
+            </div>
+            <div id="language-buttons" style="float:right">
+                <table style="display:inline-table; text-align:left;vertical-align:middle;" width="auto">
+                        <tr>
+                            <td>
+                                <div id="en" class="flag flag-content flag-us"></div>
+                            </td>
+                            <td>
+                                <div id="fr" class="flag flag-content flag-fr active"></div>
+                            </td>
+                            
+                        </tr>
+                    </table>
             </div>
             <section id='main'>
                 
@@ -87,18 +90,34 @@
                 </h4>
             </footer>
         </div> <!-- ID pg-root END -->
-            <script>
-                ejs.master_menu("home");
-                ejs.fill_locale('fr');
-                jQuery(".flag").click(function()
-                    {
-                        ejs.fill_locale($(this).attr("id"));
-                        $(".flag").removeClass("active");
-                        $(this).addClass("active");
-                    }
-                );
-                
-            </script>
+        <script>
+            ejs.master_menu("home");
+            ejs.fill_locale('fr');
+            jQuery(".flag").click(function()
+                {
+                    ejs.fill_locale($(this).attr("id"));
+                    $(".flag").removeClass("active");
+                    $(this).addClass("active");
+                }
+            );
+            jQuery("#user-icon-small").click(function()
+            {
+                ejs.master_menu('userpage');
+            });
+            
+        </script>
+        
     </body>
 </html>
 
+<!--                 <?php
+//                     require_once 'elements/lineinput.inc';
+//                     $in_test = new lineinput(null,'in_username','username','text', null, true);
+//                     $in_test->sizes(20,20);
+//                     echo $in_test->commit();
+//                 ?>
+-->
+                <!--<div id="userinfos" style="display:inline-table;">
+                    <input class="lineedit" id="in_username" name="in_username" placeholder="username" val="" stytle="display:inline-table; vertical-align:middle;"/>
+                    <div class="clear-icon" style="display:inline-table; vertical-align:middle; padding-top:4px;"></div>
+                </div>-->

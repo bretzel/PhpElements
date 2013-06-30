@@ -141,7 +141,7 @@ class obj{
                 $txt .=",";
             if($key_is_str){
                 //$vv = addslashes($val);
-                $txt .= "'$parname': '$val'";
+                $txt .= "\"$parname\": \"$val\"";
             }
             else{
                 // $vv = addslashes($val);

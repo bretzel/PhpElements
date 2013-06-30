@@ -32,7 +32,8 @@
             'menu-about'    => 'about', 
             'menu-contact'  => 'contact', 
             'home-title'    => 'Hello, World! :-)', 
-            'blog-title' => 'My blogging world! - In construction' 
+            'blog-title' => 'My blogging world! - In construction',
+            'userpage-title' => 'User\'s Page: [in construction!]'
             );
         return dictionary::$dictionary['en'];
     }
@@ -47,7 +48,10 @@
                 'menu-about'    => '&agrave-propos', 
                 'menu-contact'  => 'contacte', 
                 'home-title'    => 'Salut, Le Monde!',
-                'blog-title'    => 'Mes petits Blogs... En construction');
+                'blog-title'    => 'Mes petits Blogs... En construction',
+                'userpage-title' => 'Page de l\'Utilisateur: [en construction!]'
+            );
+                
         return dictionary::$dictionary['fr'];
     }
 }

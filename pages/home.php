@@ -71,10 +71,10 @@ class home extends element
                 </div>-->
             </div>
             <script>
-                ejs.elements_id();
+                //ejs.elements_id();
             </script>
             <?php
-            var_dump($_ENV);
+            
             return true;
     }
     

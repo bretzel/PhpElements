@@ -42,6 +42,9 @@ class service  {
             case 'blog':
                 blog::load();
                 return true;
+            case 'userpage':
+                userpage::load();
+                return true;
             default:
                 echo "$pgid: not yet implemented - please be patient!";
                 return true;
