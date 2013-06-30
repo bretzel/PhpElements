@@ -113,11 +113,60 @@ body
     background-position: top right;
 }
 
+#userpage{
+    background-image: url("images/icons/user.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#projects{
+    background-image: url("images/icons/xcode-128x128.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#user-icon-small{
+    background-image: url("images/icons/user-22x22.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    width   : 22px;
+    height  : 22px;
+    cursor  : pointer;
+    display:  inline-table;
+    vertical-align: middle;
+}
+
+
+
+#user-dialog{
+    width   : 400px;
+    height  : 250px;
+    position  : absolute;
+    left    : 483px;
+    top     : 60px;
+    display:  none;
+    background-color: white;
+    background-image: url('images/px.png'); 
+    box-shadow : 0 0 40px 5px black;
+    border: 10px solid rgba(0,0,0,0.3);
+    border-radius : 10px;
+    border-top: 1px solid #000;
+    padding:5px;
+    z-index: 1100;
+}
+
+#user-dialog.button{
+    
+}
+
+
 .l-icon{
     background-size: 16px 16px;
     background-position: left center;
     background-repeat: no-repeat;
 }
+
+
 
 .clear-icon{
     background: url("images/icons-22x22/close-exit.png") no-repeat;
@@ -127,7 +176,7 @@ body
     height:18px;
     vertical-align:middle;
     cursor: pointer;
-    opacity:.3;
+/*     opacity:.3; */
     
 }
 
